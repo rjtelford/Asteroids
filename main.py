@@ -6,7 +6,9 @@ from constants import *
 
 def main():
     pygame.init()
-    
+    dt = 0
+    delta_clock = pygame.time.Clock()
+
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
     while 1 == 1:
@@ -15,6 +17,8 @@ def main():
                 return
         screen.fill("black")
         pygame.display.flip()
+        dt = delta_clock.tick(60) / 1000
+
 
 if __name__ == "__main__":
     main()
